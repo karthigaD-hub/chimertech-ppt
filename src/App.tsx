@@ -917,18 +917,7 @@ export default function App() {
 
       <div className="w-full h-full">
 
-      {/* 🔥 SLIDES RENDERING */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentSlide}
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -50 }}
-          transition={{ duration: 0.4 }}
-        >
-          {slides[currentSlide]}
-        </motion.div>
-      </AnimatePresence>
+      
 
     </div>
       {/* Slide Navigation */}
