@@ -19,7 +19,7 @@ const APP_LINKS = {
   playStore: "https://play.google.com/store/apps/details?id=com.chimertech.iherd",
   driveVideo: "https://drive.google.com/file/d/1LUwCcwqVCO_rB4kP8AVlHSOnuVkhHism/view?usp=sharing",
   youtube: "https://youtu.be/R0Stp91yiAs",
-  whatsapp: "http://wa.link/igupbd",
+  whatsapp: "https://chat.whatsapp.com/FRDxnT0FrexFsOksQ7nI4I",
   website: "https://www.chimertech.com",
 };
 
