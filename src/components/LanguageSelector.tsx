@@ -1,11 +1,4 @@
-import { Globe } from "lucide-react";
-import { Button } from "./ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
+import React from "react";
 
 interface LanguageSelectorProps {
   currentLanguage: string;
@@ -13,34 +6,35 @@ interface LanguageSelectorProps {
 }
 
 const languages = [
-  { code: "en", name: "English", nativeName: "English" },
-  { code: "ta", name: "Tamil", nativeName: "தமிழ்" },
-  { code: "te", name: "Telugu", nativeName: "తెలుగు" },
-  { code: "hi", name: "Hindi", nativeName: "हिंदी" },
+  { code: "en", native: "English", flag: "🇬🇧" },
+  { code: "ta", native: "தமிழ்", flag: "🇮🇳" },
+  { code: "hi", native: "हिंदी", flag: "🇮🇳" },
+  { code: "te", native: "తెలుగు", flag: "🇮🇳" },
 ];
 
-export function LanguageSelector({ currentLanguage, onLanguageChange }: LanguageSelectorProps) {
-  const current = languages.find((l) => l.code === currentLanguage) || languages[0];
-
+export function LanguageSelector({
+  currentLanguage,
+  onLanguageChange,
+}: LanguageSelectorProps) {
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" className="gap-2">
-          <Globe className="h-4 w-4" />
-          {current.nativeName}
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        {languages.map((lang) => (
-          <DropdownMenuItem
-            key={lang.code}
-            onClick={() => onLanguageChange(lang.code)}
-            className="cursor-pointer"
-          >
-            {lang.nativeName} ({lang.name})
-          </DropdownMenuItem>
-        ))}
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <div className="flex gap-3 items-center bg-white/70 px-4 py-2 rounded-xl shadow-md backdrop-blur-md">
+      {languages.map((lang) => (
+        <button
+          key={lang.code}
+          onClick={() => onLanguageChange(lang.code)}
+          className={`
+            flex items-center gap-2 px-3 py-1 rounded-md text-sm font-medium transition-all duration-200
+            ${
+              currentLanguage === lang.code
+                ? "bg-green-600 text-white shadow-lg scale-105"
+                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+            }
+          `}
+        >
+          <span className="text-lg">{lang.flag}</span>
+          <span>{lang.native}</span>
+        </button>
+      ))}
+    </div>
   );
 }

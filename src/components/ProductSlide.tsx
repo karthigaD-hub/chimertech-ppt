@@ -13,6 +13,7 @@ interface ProductSlideProps {
   features: string[];
   imageUrl: string;
   buyNowText: string;
+  buyNowLink: string;
 }
 
 export function ProductSlide({
@@ -24,6 +25,7 @@ export function ProductSlide({
   features,
   imageUrl,
   buyNowText,
+  buyNowLink,
 }: ProductSlideProps) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50 py-16">
@@ -45,12 +47,12 @@ export function ProductSlide({
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
-            className="relative rounded-2xl overflow-hidden shadow-2xl h-[500px]"
+            className="relative rounded-2xl overflow-hidden shadow-2xl"
           >
             <ImageWithFallback
               src={imageUrl}
               alt={title}
-              className="w-full h-full object-cover"
+              className="w-full h-auto object-contain scale-75 "
             />
             <div className="absolute top-4 right-4">
               <Badge className="bg-green-600 text-white">
@@ -86,6 +88,7 @@ export function ProductSlide({
               <Button
                 className="w-full bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700"
                 size="lg"
+                onClick={() => window.open(buyNowLink, "_blank")} 
               >
                 <ShoppingCart className="w-5 h-5 mr-2" />
                 {buyNowText}

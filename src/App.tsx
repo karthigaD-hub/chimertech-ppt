@@ -12,6 +12,8 @@ import { Textarea } from "./components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./components/ui/card";
 import { Badge } from "./components/ui/badge";
 import { ImageWithFallback } from "./components/figma/ImageWithFallback";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "./firebase";
 
 const APP_LINKS = {
   playStore: "https://play.google.com/store/apps/details?id=com.chimertech.iherd",
@@ -22,7 +24,7 @@ const APP_LINKS = {
 };
 
 export default function App() {
-  const [language, setLanguage] = useState<Language>("en");
+  const [language, setLanguage] = useState<"en" | "ta" | "hi" | "te">("ta");
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [formData, setFormData] = useState({
@@ -35,10 +37,17 @@ export default function App() {
   });
 
   const t = translations[language];
+  
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  
+
+  try {
+    await addDoc(collection(db, "farmers"), formData); // "farmers" is the collection
     setShowSuccessModal(true);
+
+    // Reset form
     setFormData({
       name: "",
       phone: "",
@@ -47,8 +56,13 @@ export default function App() {
       district: "",
       requirement: "",
     });
-  };
 
+    console.log("Farmer details added successfully!");
+  } catch (err) {
+    console.error("Error adding document: ", err);
+  }
+};
+    // Define the slides for the app
   const slides = [
     // Slide 1: Welcome Hero
     <div key="welcome" className="min-h-screen relative overflow-hidden bg-gradient-to-br from-green-50 via-blue-50 to-green-100">
@@ -70,8 +84,12 @@ export default function App() {
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
             className="inline-block mb-6"
           >
-            <div className="bg-white rounded-full p-4 shadow-xl">
-              <Leaf className="w-16 h-16 text-green-600" />
+            <div className= "bg-white rounded-full p-8 shadow-xl flex items-center justify-center">
+              <img
+                src="https://static.wixstatic.com/media/a001c4_6ff8506afb894a5e9aac5762e5b49b3c~mv2.png/v1/crop/x_4,y_174,w_988,h_422/fill/w_446,h_196,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/PRIVATE%20LIMITED%20(Logo).png"
+                alt="Company Logo"
+                className="w-24 h-24 object-contain"
+             />
             </div>
           </motion.div>
           
@@ -304,7 +322,7 @@ export default function App() {
             className="relative rounded-2xl overflow-hidden shadow-2xl"
           >
             <ImageWithFallback
-              src="https://images.unsplash.com/photo-1744230673231-865d54a0aba4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBmYXJtaW5nfGVufDF8fHx8MTc2MzQ4NTg0N3ww&ixlib=rb-4.1.0&q=80&w=1080"
+              src="https://static.wixstatic.com/media/bfd149_dda8d43122274372ac5472b8817461a2~mv2.png/v1/fill/w_940,h_786,al_c,q_90,enc_avif,quality_auto/bfd149_dda8d43122274372ac5472b8817461a2~mv2.png"
               alt="Mobile farming app"
               className="w-full h-[500px] object-cover"
             />
@@ -500,13 +518,14 @@ export default function App() {
           transition={{ delay: 0.8 }}
           className="bg-white rounded-2xl shadow-xl p-8 text-center"
         >
-          <h3 className="mb-4">Complete App Demo</h3>
-          <p className="text-gray-600 mb-6">Watch the full tutorial on how to use iHerd app</p>
+          <h3 className="mb-4">"iHerd செயலியை எப்படிப் பயன்படுத்துவது என்பதை முழுமையாக காணுங்கள்"</h3>
+          <p className="text-gray-600 mb-6"></p>
           <Button
             asChild
             size="lg"
             className="bg-blue-600 hover:bg-blue-700"
           >
+            
             <a href={APP_LINKS.driveVideo} target="_blank" rel="noopener noreferrer">
               <Youtube className="w-5 h-5 mr-2" />
               Watch Full Demo
@@ -530,8 +549,10 @@ export default function App() {
         t.products.cmt.feature4,
         t.products.cmt.feature5,
       ]}
-      imageUrl="https://images.unsplash.com/photo-1576669801838-1b1c52121e6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYWJvcmF0b3J5JTIwdGVzdCUyMGtpdCUyMG1lZGljYWx8ZW58MXx8fHwxNzYzNDg2MzIwfDA&ixlib=rb-4.1.0&q=80&w=1080"
+      imageUrl="https://static.wixstatic.com/media/a001c4_68eab0b256ab424d9909195736e1157e~mv2.png/v1/fill/w_780,h_1184,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Untitled%20design.png"
       buyNowText={t.buyNow}
+      buyNowLink="https://www.chimertech.com/product-page/california-mastitis-test-kit-with-paddle"
+      
     />,
 
     // Product Slide - NutraKine
@@ -548,8 +569,9 @@ export default function App() {
         t.products.nutrakine.feature4,
         t.products.nutrakine.feature5,
       ]}
-      imageUrl="https://images.unsplash.com/photo-1606235357537-84aea24d4c4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2ZXRlcmluYXJ5JTIwbWVkaWNpbmUlMjBib3R0bGVzfGVufDF8fHx8MTc2MzQ4NjMyMHww&ixlib=rb-4.1.0&q=80&w=1080"
+      imageUrl="https://static.wixstatic.com/media/bfd149_8521084c3ecf4359b72495d63a1868da~mv2.jpg/v1/crop/x_203,y_2,w_957,h_1339/fill/w_786,h_1106,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/external-file_edited.jpg"
       buyNowText={t.buyNow}
+      buyNowLink="https://www.chimertech.com/product-page/nutrakine-fertility-booster-500grams"
     />,
 
     // Product Slide - 6.5 HP Engine
@@ -567,8 +589,9 @@ export default function App() {
         t.products.engine.feature4,
         t.products.engine.feature5,
       ]}
-      imageUrl="https://images.unsplash.com/photo-1609872209699-3e55dc7d90b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZXRyb2wlMjBlbmdpbmUlMjBtYWNoaW5lcnl8ZW58MXx8fHwxNzYzNDg2MzIwfDA&ixlib=rb-4.1.0&q=80&w=1080"
+      imageUrl="https://static.wixstatic.com/media/a001c4_b36972100432454bb57e2d25e9d0ba8e~mv2.png/v1/crop/x_8,y_0,w_530,h_497/fill/w_587,h_596,al_c,lg_1,q_85,enc_avif,quality_auto/Annotation%202025-02-05%20185815.png"
       buyNowText={t.buyNow}
+      buyNowLink="https://www.chimertech.com/product-page/6-5-hp-petrol-engine"
     />,
 
     // Product Slide - Salmonella Test
@@ -585,8 +608,9 @@ export default function App() {
         t.products.salmonella.feature4,
         t.products.salmonella.feature5,
       ]}
-      imageUrl="https://images.unsplash.com/photo-1576669801838-1b1c52121e6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYWJvcmF0b3J5JTIwdGVzdCUyMGtpdCUyMG1lZGljYWx8ZW58MXx8fHwxNzYzNDg2MzIwfDA&ixlib=rb-4.1.0&q=80&w=1080"
+      imageUrl="https://static.wixstatic.com/media/bfd149_3825ee6c2bfe4e4dbd8a82e0eee43239~mv2.jpg/v1/fill/w_780,h_780,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/salmon_edited.jpg"
       buyNowText={t.buyNow}
+      buyNowLink="https://www.chimertech.com/product-page/salmonella-antibody-rapid-test-kit"
     />,
 
     // Product Slide - PregKine
@@ -603,8 +627,9 @@ export default function App() {
         t.products.pregkine.feature4,
         t.products.pregkine.feature5,
       ]}
-      imageUrl="https://images.unsplash.com/photo-1686145546043-a847a2ff5741?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXR0bGUlMjBicmVlZGluZyUyMGZhcm1pbmd8ZW58MXx8fHwxNzYzNDg2MzIxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+      imageUrl="https://static.wixstatic.com/media/a001c4_186d39723fae4cecbcb4ee3f31fe574b~mv2.avif/v1/fill/w_665,h_665,al_c,lg_1,q_85,enc_avif,quality_auto/y.avif"
       buyNowText={t.buyNow}
+      buyNowLink="https://www.chimertech.com/product-page/pregkine-bovine-pregnancy-rapid-test-kit-pack-of-10"
     />,
 
     // Product Slide - Iogiene
@@ -621,8 +646,9 @@ export default function App() {
         t.products.iogiene.feature4,
         t.products.iogiene.feature5,
       ]}
-      imageUrl="https://images.unsplash.com/photo-1606235357537-84aea24d4c4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2ZXRlcmluYXJ5JTIwbWVkaWNpbmUlMjBib3R0bGVzfGVufDF8fHx8MTc2MzQ4NjMyMHww&ixlib=rb-4.1.0&q=80&w=1080"
+      imageUrl="https://static.wixstatic.com/media/a001c4_6af24cc7d48343dab803578714ae6000~mv2.png/v1/crop/x_2950,y_0,w_2791,h_3375/fill/w_748,h_904,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/1.png"
       buyNowText={t.buyNow}
+      buyNowLink="https://www.chimertech.com/product-page/iogiene"
     />,
 
     // Product Slide - Moo-Foam
@@ -640,8 +666,9 @@ export default function App() {
         t.products.moofoam.feature4,
         t.products.moofoam.feature5,
       ]}
-      imageUrl="https://images.unsplash.com/photo-1580686954168-b08d0309d203?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYWlyeSUyMGVxdWlwbWVudCUyMG1pbGtpbmd8ZW58MXx8fHwxNzYzNDg2MzIxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+      imageUrl="https://static.wixstatic.com/media/a001c4_20b56085396745b68a79b57c3fa89174~mv2.png/v1/crop/x_1604,y_0,w_2793,h_3375/fill/w_748,h_904,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/5.png"
       buyNowText={t.buyNow}
+      buyNowLink="https://www.chimertech.com/product-page/moo-foam"
     />,
 
     // Product Slide - QuadMastest
@@ -662,8 +689,9 @@ export default function App() {
         t.products.quadmastest.feature7,
         t.products.quadmastest.feature8,
       ]}
-      imageUrl="https://images.unsplash.com/photo-1576669801838-1b1c52121e6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYWJvcmF0b3J5JTIwdGVzdCUyMGtpdCUyMG1lZGljYWx8ZW58MXx8fHwxNzYzNDg2MzIwfDA&ixlib=rb-4.1.0&q=80&w=1080"
+      imageUrl="https://static.wixstatic.com/media/a001c4_c8129ca228a2498c8d81b998daecd31b~mv2.png/v1/fill/w_694,h_904,al_c,q_90,enc_avif,quality_auto/Quadmastest%20(1)_edited_edited.png"
       buyNowText={t.buyNow}
+      buyNowLink="https://www.chimertech.com/product-page/quadmastest"
     />,
 
     // Product Slide - Mastoveda
@@ -683,8 +711,10 @@ export default function App() {
         t.products.mastoveda.feature6,
         t.products.mastoveda.feature7,
       ]}
-      imageUrl="https://images.unsplash.com/photo-1709813610121-e2a51545e212?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZXJiYWwlMjBtZWRpY2luZSUyMHNwcmF5fGVufDF8fHx8MTc2MzQ4NjMyMXww&ixlib=rb-4.1.0&q=80&w=1080"
-      buyNowText={t.buyNow}
+      imageUrl="https://static.wixstatic.com/media/a001c4_4389b7b639c2425cbd7470ac1e7c4c16~mv2.png/v1/crop/x_1953,y_576,w_2008,h_2753/fill/w_516,h_708,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/products%20images%20(4).png"
+      buyNowText={t.buyNow} 
+      buyNowLink="https://www.chimertech.com/product-page/mastoveda"
+
     />,
 
     // Slide 5: Registration Form
@@ -709,12 +739,12 @@ export default function App() {
             className="relative rounded-2xl overflow-hidden shadow-2xl h-[600px]"
           >
             <ImageWithFallback
-              src="https://images.unsplash.com/photo-1602612142771-04b0adfca46d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3clMjBtaWxrJTIwcHJvZHVjdGlvbnxlbnwxfHx8fDE3NjM0ODU4NDV8MA&ixlib=rb-4.1.0&q=80&w=1080"
+              src="https://static.wixstatic.com/media/bfd149_79b389bbd77749ad81a102de448b4e23~mv2.png/v1/fill/w_874,h_874,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/bfd149_79b389bbd77749ad81a102de448b4e23~mv2.png"
               alt="Milk production"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end">
-              <div className="p-8 text-white">
+            <div className="absolute inset-0 flex items-end">
+              <div className="p-8 text-white bg-gradient-to-t from-black/70 via-black/40 to-transparent w-full">
                 <h3 className="mb-4">Join the Revolution</h3>
                 <p className="mb-4 opacity-90">
                   Be part of India's leading dairy farming technology movement
@@ -873,11 +903,33 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen overflow-x-hidden">
-      {/* Fixed Language Selector */}
-      <div className="fixed top-4 right-4 z-50">
-        <LanguageSelector currentLanguage={language} onLanguageChange={setLanguage} />
-      </div>
 
+    {/* Fixed Language Selector */}
+    <div className="fixed top-4 right-4 z-50">
+      <LanguageSelector
+        currentLanguage={language}
+        onLanguageChange={(lang) =>
+          setLanguage(lang as "en" | "ta" | "hi" | "te")
+        }
+     />
+    </div>
+
+      <div className="w-full h-full">
+
+      {/* 🔥 SLIDES RENDERING */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentSlide}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -50 }}
+          transition={{ duration: 0.4 }}
+        >
+          {slides[currentSlide]}
+        </motion.div>
+      </AnimatePresence>
+
+    </div>
       {/* Slide Navigation */}
       <div className="fixed left-4 top-1/2 -translate-y-1/2 z-40 space-y-3">
         {slides.map((_, index) => (
@@ -937,5 +989,6 @@ export default function App() {
         closeText={t.close}
       />
     </div>
+    
   );
 }
