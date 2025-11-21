@@ -764,6 +764,17 @@ export default function App() {
                     100% Sustainable
                   </Badge>
                 </div>
+                {/* 🚀 Added button that links to Google Drive */}
+                <a
+                href="https://drive.google.com/file/d/1QkuFYNfVULE59jh99c791KKM2syPyu_m/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="bg-white/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white/30">
+                  View Full Catalogue
+                </Button>
+              </a>
+
               </div>
             </div>
           </motion.div>
