@@ -577,7 +577,7 @@ export default function App() {
 
     // Product Slide - 6.5 HP Engine
     <ProductSlide
-      key="enhine"
+      key="engine"
       title={t.products.engine.title}
       subtitle={t.products.engine.subtitle}
       category={t.products.dairyEquipment}
