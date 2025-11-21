@@ -73,7 +73,7 @@ export const translations = {
         feature2: "Cost-effective and reliable solution for mastitis screening",
         feature3: "Accurate detection of subclinical mastitis at an early stage",
         feature4: "Simple and user-friendly design, requiring minimal training",
-        feature5: "Trusted by veterinarians and dairy farmers worldwide for over 50 years",
+        feature5: "Trusted by veterinarians and dairy farmers worldwide,",
       },
       
       nutrakine: {
@@ -240,7 +240,8 @@ export const translations = {
         feature2: "செலவு குறைந்த மற்றும் நம்பகமான மாஸ்டிடிஸ் ஸ்கிரீனிங் தீர்வு",
         feature3: "ஆரம்ப கட்டத்தில் சப்கிளினிக்கல் மாஸ்டிடிஸை துல்லியமாக கண்டறிதல்",
         feature4: "எளிமையான மற்றும் பயன்படுத்த எளிதான வடிவமைப்பு, குறைந்தபட்ச பயிற்சி தேவை",
-        feature5: "50 ஆண்டுகளுக்கும் மேலாக கால்நடை மருத்துவர்கள் மற்றும் பால் பண்ணை விவசாயிகளால் நம்பப்படுகிறது",
+        feature5: "உலகம் முழுவதும் கால்நடை மருத்துவர்களாலும் பால் உற்பத்தியாளர்களாலும் நம்பப்படுகிறது",
+        
       },
       
       nutrakine: {
@@ -407,7 +408,7 @@ export const translations = {
         feature2: "మాస్టిటిస్ స్క్రీనింగ్ కోసం ఖర్చుతో కూడుకున్న మరియు నమ్మకమైన పరిష్కారం",
         feature3: "ప్రారంభ దశలో సబ్‌క్లినికల్ మాస్టిటిస్‌ను ఖచ్చితంగా గుర్తించడం",
         feature4: "సాధారణ మరియు వినియోగదారు-అనుకూల డిజైన్, కనీస శిక్షణ అవసరం",
-        feature5: "50 సంవత్సరాలకు పైగా పశువైద్యులు మరియు డైరీ రైతులచే విశ్వసించబడింది",
+        feature5: "ప్రపంచవ్యాప్తంగా పశువైద్యులు మరియు పాల రైతులు నమ్మకంగా ఉపయోగిస్తున్నారు",
       },
       
       nutrakine: {
@@ -574,7 +575,7 @@ export const translations = {
         feature2: "मास्टिटिस स्क्रीनिंग के लिए लागत प्रभावी और विश्वसनीय समाधान",
         feature3: "प्रारंभिक चरण में सबक्लिनिकल मास्टिटिस का सटीक पता लगाना",
         feature4: "सरल और उपयोगकर्ता-अनुकूल डिज़ाइन, न्यूनतम प्रशिक्षण की आवश्यकता",
-        feature5: "50 से अधिक वर्षों से पशु चिकित्सकों और डेयरी किसानों द्वारा विश्वसनीय",
+        feature5: " विश्वभर में पशु चिकित्सकों और डेयरी किसानों द्वारा विश्वसनीयता से उपयोग किया जाता है",
       },
       
       nutrakine: {
