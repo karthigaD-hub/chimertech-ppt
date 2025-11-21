@@ -577,7 +577,7 @@ export default function App() {
 
     // Product Slide - 6.5 HP Engine
     <ProductSlide
-      key="engine"
+      key="enhine"
       title={t.products.engine.title}
       subtitle={t.products.engine.subtitle}
       category={t.products.dairyEquipment}
@@ -590,9 +590,9 @@ export default function App() {
         t.products.engine.feature4,
         t.products.engine.feature5,
       ]}
-      imageUrl="https://static.wixstatic.com/media/a001c4_b36972100432454bb57e2d25e9d0ba8e~mv2.png/v1/crop/x_8,y_0,w_530,h_497/fill/w_587,h_596,al_c,lg_1,q_85,enc_avif,quality_auto/Annotation%202025-02-05%20185815.png"
+      imageUrl="https://static.wixstatic.com/media/a001c4_56de06911f0d4bda8a73105e1b75d0d1~mv2.png/v1/crop/x_58,y_0,w_965,h_1350/fill/w_786,h_1106,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Untitled%20design.png"
       buyNowText={t.buyNow}
-      buyNowLink="https://www.chimertech.com/product-page/6-5-hp-petrol-engine"
+      buyNowLink="https://www.chimertech.com/product-page/fine-kine"
     />,
 
     // Product Slide - Salmonella Test
