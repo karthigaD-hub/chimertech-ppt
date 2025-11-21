@@ -87,14 +87,15 @@ export const translations = {
       },
       
       engine: {
-        title: "6.5 HP Petrol Engine",
-        subtitle: "High-Performance Power Solution by Chimertech",
-        description: "Introducing our high-performance 6.5 HP petrol engine, designed to deliver reliable and efficient power for a wide range of agricultural, industrial, and domestic applications. With advanced technology and robust construction, it ensures smooth operation even in challenging conditions.",
-        feature1: "Reliable and efficient power delivery",
-        feature2: "Suitable for agricultural, industrial, and domestic use",
-        feature3: "Advanced technology and robust construction",
-        feature4: "Smooth operation in challenging conditions",
-        feature5: "Durable and easy to maintain",
+        title: "Fine-Kine",
+        subtitle: "Teat Sealant for Post-Milking Udder Hygiene",
+        description:"Fine-Kine is a teat sealant designed for post-milking udder hygiene. It prevents bacterial growth and mastitis infection, increasing productivity and reducing milk loss by 50–80%. It contains no harmful chemicals and offers fast drying with udder protection for up to 18 hours.",
+        feature1: "Prevents bacterial growth and mastitis",
+        feature2: "Increases productivity and reduces milk loss by 50–80%",
+        feature3: "No harmful chemicals or ingredients",
+        feature4: "Fast drying",
+        feature5: "Protects udder up to 18 hours",
+
       },
       
       salmonella: {
@@ -255,14 +256,14 @@ export const translations = {
       },
       
       engine: {
-        title: "6.5 HP பெட்ரோல் எஞ்சின்",
-        subtitle: "சைமர்டெக்கின் உயர்-செயல்திறன் சக்தி தீர்வு",
-        description: "எங்களின் உயர்-செயல்திறன் 6.5 HP பெட்ரோல் எஞ்சினை அறிமுகப்படுத்துகிறோம், இது விவசாயம், தொழில்துறை மற்றும் வீட்டு பயன்பாடுகளுக்கு நம்பகமான மற்றும் திறமையான சக்தியை வழங்க வடிவமைக்கப்பட்டுள்ளது. மேம்பட்ட தொழில்நுட்பம் மற்றும் வலுவான கட்டுமானத்துடன், சவாலான சூழ்நிலைகளிலும் சீரான செயல்பாட்டை உறுதி செய்கிறது.",
-        feature1: "நம்பகமான மற்றும் திறமையான சக்தி வழங்கல்",
-        feature2: "விவசாயம், தொழில்துறை மற்றும் வீட்டு பயன்பாட்டிற்கு ஏற்றது",
-        feature3: "மேம்பட்ட தொழில்நுட்பம் மற்றும் வலுவான கட்டுமானம்",
-        feature4: "சவாலான சூழ்நிலைகளில் சீரான செயல்பாடு",
-        feature5: "நீடித்து மற்றும் பராமரிக்க எளிதானது",
+        title: "ஃபைன்-கைன்",
+        subtitle: "பால் பறிப்பு பிறகு இடை சுத்தத்திற்கான டீட் சீலண்ட்",
+        description:"ஃபைன்-கைன் என்பது பால் பறிப்பு பிறகு இடை சுத்தத்திற்காக உருவாக்கப்பட்ட டீட் சீலண்ட் ஆகும். இது பாக்டீரியா வளர்ச்சி மற்றும் மாஸ்டைடிஸ் தொற்றைத் தடுக்கும். உற்பத்தியை அதிகரித்து பால் இழப்பை 50–80% வரை குறைக்கிறது. இதில் தீங்கு விளைவிக்கும் ரசாயனங்கள் எதுவும் இல்லை. இது விரைவாக உலருவதுடன் 18 மணி நேரம் வரை இடைக்கு பாதுகாப்பு அளிக்கிறது.",
+        feature1: "பாக்டீரியா வளர்ச்சி மற்றும் மாஸ்டைடிஸைத் தடுக்கும்",
+        feature2: "உற்பத்தியை அதிகரித்து பால் இழப்பை 50–80% குறைக்கும்",
+        feature3: "தீங்கு விளைவிக்கும் ரசாயனங்கள் இல்லை",
+        feature4: "விரைவாக உலரும்",
+        feature5: "18 மணி நேர இடை பாதுகாப்பு",
       },
       
       salmonella: {
@@ -422,14 +423,14 @@ export const translations = {
       },
       
       engine: {
-        title: "6.5 HP పెట్రోల్ ఇంజిన్",
-        subtitle: "చైమర్‌టెక్ యొక్క అధిక-పనితీరు శక్తి పరిష్కారం",
-        description: "మా అధిక-పనితీరు 6.5 HP పెట్రోల్ ఇంజిన్‌ను పరిచయం చేస్తున్నాము, ఇది వ్యవసాయ, పారిశ్రామిక మరియు గృహ అనువర్తనాల కోసం నమ్మకమైన మరియు సమర్థవంతమైన శక్తిని అందించడానికి రూపొందించబడింది. అధునాతన సాంకేతికత మరియు బలమైన నిర్మాణంతో, సవాలు చేసే పరిస్థితులలో కూడా సాఫీగా పనిచేయడాన్ని నిర్ధారిస్తుంది.",
-        feature1: "నమ్మకమైన మరియు సమర్థవంతమైన శక్తి పంపిణీ",
-        feature2: "వ్యవసాయ, పారిశ్రామిక మరియు గృహ వినియోగానికి అనుకూలమైనది",
-        feature3: "అధునాతన సాంకేతికత మరియు బలమైన నిర్మాణం",
-        feature4: "సవాలు చేసే పరిస్థితులలో సాఫీగా పనిచేయడం",
-        feature5: "మన్నికైన మరియు నిర్వహించడానికి సులభం",
+        title: "ఫైన్-కైన్",
+        subtitle: "పాలు దుధించడం తర్వాత ఉబ్బరం పరిశుభ్రత కోసం టీట్ సీలెంట్",
+        description:"ఫైన్-కైన్ అనేది పాలు దుధించిన తర్వాత ఉబ్బరం (udder) పరిశుభ్రత కోసం తయారు చేసిన టీట్ సీలెంట్. ఇది బ్యాక్టీరియా వృద్ధి మరియు మాస్టిటిస్ సంక్రామణను నివారిస్తుంది. ఉత్పాదకతను పెంచి పాల నష్టాన్ని 50–80% వరకు తగ్గిస్తుంది. హానికరమైన రసాయనాలు లేవు. ఇది త్వరగా ఎండిపోయి 18 గంటల వరకు రక్షణనిస్తుంది.",
+        feature1: "బ్యాక్టీరియా వృద్ధి మరియు మాస్టిటిస్‌ను నివారిస్తుంది",
+        feature2: "ఉత్పాదకత పెంచి పాల నష్టాన్ని 50–80% తగ్గిస్తుంది",
+        feature3: "హానికరమైన రసాయనాలు లేవు",
+        feature4: "త్వరగా ఎండిపోతుంది",
+        feature5: "18 గంటల వరకు రక్షణ",
       },
       
       salmonella: {
@@ -589,14 +590,14 @@ export const translations = {
       },
       
       engine: {
-        title: "6.5 HP पेट्रोल इंजन",
-        subtitle: "चाइमरटेक द्वारा उच्च-प्रदर्शन शक्ति समाधान",
-        description: "हमारे उच्च-प्रदर्शन 6.5 HP पेट्रोल इंजन का परिचय, जो कृषि, औद्योगिक और घरेलू अनुप्रयोगों के लिए विश्वसनीय और कुशल शक्ति प्रदान करने के लिए डिज़ाइन किया गया है। उन्नत प्रौद्योगिकी और मजबूत निर्माण के साथ, यह चुनौतीपूर्ण परिस्थितियों में भी सुचारू संचालन सुनिश्चित करता है।",
-        feature1: "विश्वसनीय और कुशल शक्ति वितरण",
-        feature2: "कृषि, औद्योगिक और घरेलू उपयोग के लिए उपयुक्त",
-        feature3: "उन्नत प्रौद्योगिकी और मजबूत निर्माण",
-        feature4: "चुनौतीपूर्ण परिस्थितियों में सुचारू संचालन",
-        feature5: "टिकाऊ और बनाए रखने में आसान",
+        title: "फाइन-काइन",
+        subtitle: "दूध दोहन के बाद उब्बर स्वच्छता के लिए थन सीलेंट",
+        description: "फाइन-काइन एक थन सीलेंट है जो दूध दोहन के बाद उब्बर (udder) स्वच्छता के लिए डिज़ाइन किया गया है। यह बैक्टीरिया की वृद्धि और मास्टिटिस संक्रमण को रोकता है। यह उत्पादकता बढ़ाता है और दूध हानि को 50–80% तक कम करता है। इसमें हानिकारक रसायन नहीं होते हैं। यह तेजी से सूखता है और 18 घंटे तक सुरक्षा प्रदान करता है।",
+        feature1: "बैक्टीरिया की वृद्धि और मास्टिटिस को रोकता है",
+        feature2: "उत्पादकता बढ़ाता है और दूध हानि को 50–80% तक कम करता है",
+        feature3: "हानिकारक रसायन नहीं होते हैं",
+        feature4: "तेजी से सूखता है",
+        feature5: "18 घंटे तक सुरक्षा प्रदान करता है",
       },
       
       salmonella: {
